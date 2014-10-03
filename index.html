@@ -1,82 +1,379 @@
-<!doctype html>
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="shortcut icon" href="favicon.ico">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Footcarbon by ssrinivaas</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	
+
+    <title>Footcarbon</title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/freelancer.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-  </head>
-  <body>
+<style>
 
-      <header>
-        <h1>Footcarbon</h1>
-        <p></p>
-      </header>
+h3{
+ color: green;
 
-      <div id="banner">
-        <span id="logo"></span>
+}
+form{
+	text-indent: 5.5em;
+}
+.button {
+		
+-webkit-appearance: button;
+    -moz-appearance: button;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-padding-end: 20px;
+    -moz-padding-end: 20px;
+    -webkit-padding-start: 2px;
+    -moz-padding-start: 2px;
+    background-color: #F07575; /* fallback color if gradients are not supported */
+    background-image: url(../images/select-arrow.png), -webkit-linear-gradient(top, #E5E5E5, #F4F4F4); /* For Chrome and Safari */
+    background-image: url(../images/select-arrow.png), -moz-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Fx (3.6 to 15) */
+    background-image: url(../images/select-arrow.png), -ms-linear-gradient(top, #E5E5E5, #F4F4F4); /* For pre-releases of IE 10*/
+    background-image: url(../images/select-arrow.png), -o-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Opera (11.1 to 12.0) */ 
+    background-image: url(../images/select-arrow.png), linear-gradient(to bottom, #E5E5E5, #F4F4F4); /* Standard syntax; must be last */
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #AAA;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    color: #555;
+    font-size: inherit;
+    font-weight: bold;
+    text-align: center;
+	text-indent: 1.5em;
 
-        <a href="https://github.com/ssrinivaas/footcarbon" class="button fork"><strong>View On GitHub</strong></a>
-        <div class="downloads">
-          <span>Downloads:</span>
-          <ul>
-            <li><a href="https://github.com/ssrinivaas/footcarbon/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/ssrinivaas/footcarbon/tarball/master" class="button">TAR</a></li>
-          </ul>
+    margin: 0;
+    overflow: hidden;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+	
+}
+select {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-padding-end: 20px;
+    -moz-padding-end: 20px;
+    -webkit-padding-start: 2px;
+    -moz-padding-start: 2px;
+    background-color: #F07575; /* fallback color if gradients are not supported */
+    background-image: url(../images/select-arrow.png), -webkit-linear-gradient(top, #E5E5E5, #F4F4F4); /* For Chrome and Safari */
+    background-image: url(../images/select-arrow.png), -moz-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Fx (3.6 to 15) */
+    background-image: url(../images/select-arrow.png), -ms-linear-gradient(top, #E5E5E5, #F4F4F4); /* For pre-releases of IE 10*/
+    background-image: url(../images/select-arrow.png), -o-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Opera (11.1 to 12.0) */ 
+    background-image: url(../images/select-arrow.png), linear-gradient(to bottom, #E5E5E5, #F4F4F4); /* Standard syntax; must be last */
+    background-position: center right;
+    background-repeat: no-repeat;
+    border: 1px solid #AAA;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    color: #555;
+    font-size: inherit;
+    margin: 0;
+    overflow: hidden;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+</style>
+
+
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top">Footcarbon</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#portfolio">Calculate</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-      </div><!-- end banner -->
+        <!-- /.container-fluid -->
+    </nav>
 
-    <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" src="img/RetinaIcon.png" alt="">
+                    <div class="intro-text">
+                        <span class="name">Footcarbon</span>
+                        
+                        <span class="skills">Calculate your carbon footprint and change it for the better.</span>
+<br><br><br><br><br><br><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Calculate</h2>
+                    
+                </div>
+            </div>
+            
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<h3>Check your wheels.</h3> 
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<form action=“” method=“post”>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<h4>How many miles do you drive a year? &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp<input type=“text” name=“1” size="10"/></h4> <h4>What’s your car’s fuel economy (Combined MPG)? &nbsp  &nbsp<input type=“text” name=“1” size="10"/></h4>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+</form>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<br><br>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<h3>Check your food.</h3>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>Project maintained by <a href="https://github.com/ssrinivaas">ssrinivaas</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
-      </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+<form action=“” method=“get”>
+
+<h4><label class="question">How much meat do you eat? </label> &nbsp &nbsp &nbsp
+				  <select>
+
+<option value=“meat_quantity”>None</option>
+<option value=“meat_quantity”>A Little</option>
+<option value=“meat_quantity”>Average</option>
+<option value=“meat_quantity”>Above Average</option>
+<option value=“meat_quantity”>A lot</option>
+
+
+</select>
+
+</h4>
+
+
+
+</form>
+
+<br>
+
+<h3>Check your flight.</h3>
+
+<form action=“” method=“get”>
+
+<h4>
+<label class="question">How many miles do you fly in a year?</label> &nbsp &nbsp &nbsp
+ <input type="text" id="miles_flown" size="10" >
+					
+</h4>
+
+</form><br><br>
+
+
+<h3>Check your home.</h3>
+
+<form action=“” method=“post”>
+
+<h4>How many people live in your home?&nbsp &nbsp &nbsp<input type=“text” name=“1” size="10"/></h4>
+
+<h4>How much do you usually spend on electricity per month?&nbsp &nbsp &nbsp<input type=“text” name=“1” size="10"/></h4>
+
+<h4>How much do you usually spend on natural gas per month?&nbsp &nbsp &nbsp<input type=“text” name=“1” size="10"/></h4>
+
+<h4>How much waste do you create a week? &nbsp &nbsp &nbsp <select>
+
+<option value=“meat_quantity”>None</option>
+<option value=“meat_quantity”>A Little</option>
+<option value=“meat_quantity”>Average</option>
+<option value=“meat_quantity”>Above Average</option>
+<option value=“meat_quantity”>A lot</option>
+
+
+</select></h4>
+
+<h4>How often do you recycle what can be recycled?&nbsp &nbsp &nbsp <select>
+
+<option value=“meat_quantity”>Always</option>
+<option value=“meat_quantity”>Almost Always</option>
+<option value=“meat_quantity”>Often</option>
+<option value=“meat_quantity”>Occasionally</option>
+<option value=“meat_quantity”>Never</option>
+
+
+</select></h4>
+
+</form>
+				
+				<legend>&nbsp;</legend>
+					<input type="submit" class="button" name="Calculate" value="Calculate " tabindex="14"> <input type="reset" value="Reset" name="reset" class="button" tabindex="15">
+				
+				
+			</form>
+
+
+
+
+    </section>
+
+    <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                   
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="lg-4 lg-offset-2">
+                    <center><p>In a world of 
+
+<!—- Population Count —>
+
+<script type="text/javascript">
+
+
+
+function maind(){
+	startdate = new Date()
+	now(startdate.getYear(),startdate.getMonth(),startdate.getDate(),startdate.getHours(),startdate.getMinutes(),startdate.getSeconds())
+}
+
+
+function ChangeValue(number,pv){
+	numberstring =""
+	var j=0 
+	var i=0
+	while (number > 1)
+	 { 
+
+	    numberstring = (Math.round(number-0.5) % 10) + numberstring
+	    number= number / 10
+	    j++
+	    if (number > 1 && j==3) { 
+			numberstring = "," + numberstring 
+			j=0}
+	    i++
+	 }
+
+	 numberstring=numberstring
+
+if (pv==1) {document.getElementById("worldpop").innerHTML=numberstring }
+}
+
+
+function now(year,month,date,hours,minutes,seconds){       
+startdatum = new Date(year,month,date,hours,minutes,seconds)
+
+var now = 5600000000.0
+var now2 = 5690000000.0
+var groeipercentage = (now2 - now) / now *100
+var groeiperseconde = (now * (groeipercentage/100))/365.0/24.0/60.0/60.0 
+nu = new Date ()                
+schuldstartdatum = new Date (96,1,1)                            
+secondenoppagina = (nu.getTime() - startdatum.getTime())/1000
+totaleschuld= (nu.getTime() - schuldstartdatum.getTime())/1000*groeiperseconde + now
+ChangeValue(totaleschuld,1);
+
+
+timerID = setTimeout("now(startdatum.getYear(),startdatum.getMonth(),startdatum.getDate(),startdatum.getHours(),startdatum.getMinutes(),startdatum.getSeconds())",200)
+}
+
+window.onload=maind
+</script>
+
+<span id="worldpop" style="font-weight: bold"></span> folks and counting, the importance of watching our impact on the planet is growing with every passing minute. Every pound of CO2 reduced is a pound of hope for a brighter future.<br><br>Made by Srinivaas.</p></center>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
     
-  </body>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visble-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+   
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/freelancer.js"></script>
+
+</body>
+
 </html>
