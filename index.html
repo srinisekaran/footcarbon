@@ -437,16 +437,13 @@ function checkform(form) {
 
 }
 
-function getSelectedValue(selectList){
-   return selectList[selectList.selectedIndex].value
-}
 
 function computeform(form) {
-var meat_amount=getSelectedValue(form.meat_amount)
+
 
        if (checkform(form)) {
 
-       yourresults= ((form.car_miles.value/form.mpg.value)*19.42);
+       yourresults= Math.round(((form.car_miles.value/form.mpg.value)*19.42)+(.5*form.miles_flown.value));
        form.results.value=yourresults;
 
        if (yourbmi >40) {
