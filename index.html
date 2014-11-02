@@ -32,7 +32,14 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<style>
+
+    <script type="text/javascript">
+
+</script>
+
+  
+    
+    <style>
 
 h3{
  color: green;
@@ -171,72 +178,88 @@ select {
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Calculate</h2>
+                   
                     
                 </div>
             </div>
+           
+
+ 
+            
+           
+
+    	<FORM NAME="BMI" method=POST>
+<h3>Check your wheels.</h3> 
+            <h4><label class="question">How many miles do you drive a year? </label>&nbsp  &nbsp
+<INPUT TYPE=TEXT NAME=car_miles  SIZE=10 onFocus="this.form.car_miles.value=''">
+<h4><label class="question">What’s your car’s fuel economy (Combined MPG)?</label> &nbsp  &nbsp
+<INPUT TYPE=TEXT NAME=mpg  SIZE=10 onFocus="this.form.mpg.value=''"></h4>
+<br>
+
+<h3>Check your food.</h3>
+            
+            <h4><label class="question">How much meat do you eat? </label> &nbsp &nbsp &nbsp
+				  
+            <select>
+
+
+            <option value=“meat_quantity”>None</option>
+
+            <option value=“meat_quantity”>A Little</option>
+
+            <option value=“meat_quantity”>Average</option>
+
+            <option value=“meat_quantity”>Above Average</option>
+
+            <option value=“meat_quantity”>A lot</option>
             
 
 
-
-<h3>Check your wheels.</h3> 
-
-<form action=“” method=“post”>
-
-<h4>How many miles do you drive a year? &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp<input type=“text” name=“1” size="10"/></h4> <h4>What’s your car’s fuel economy (Combined MPG)? &nbsp  &nbsp<input type=“text” name=“1” size="10"/></h4>
-
-</form>
-
-<br><br>
-
-<h3>Check your food.</h3>
-
-<form action=“” method=“get”>
-
-<h4><label class="question">How much meat do you eat? </label> &nbsp &nbsp &nbsp
-				  <select>
-
-<option value=“meat_quantity”>None</option>
-<option value=“meat_quantity”>A Little</option>
-<option value=“meat_quantity”>Average</option>
-<option value=“meat_quantity”>Above Average</option>
-<option value=“meat_quantity”>A lot</option>
-
-
 </select>
+            
 
 </h4>
+         
 
-
-
-</form>
 
 <br>
 
+            
+
 <h3>Check your flight.</h3>
 
-<form action=“” method=“get”>
 
-<h4>
-<label class="question">How many miles do you fly in a year?</label> &nbsp &nbsp &nbsp
- <input type="text" id="miles_flown" size="10" >
-					
+           
+            <h4>
+<label class="question">How many miles do you fly in a year?</label> 
+            &nbsp &nbsp &nbsp
+ <input type="text" id="miles_flown" size="10">
+		
 </h4>
 
-</form><br><br>
+
+        <br>
+        
+         
+            
+            <h3>Check your home.</h3>
+           
+            
+
+<h4><label class="question">How many people live in your home?</label>&nbsp &nbsp &nbsp
+            <input type=“text” name=“number_family” size="10"></h4>
 
 
-<h3>Check your home.</h3>
+            <h4><label class="question">How much do you usually spend on electricity per month?</label>&nbsp &nbsp &nbsp
+            <input type=“text” name=“electric_month” size="10"></h4>
+            
 
-<form action=“” method=“post”>
+<h4><label class="question">How much do you usually spend on natural gas per month?</label>&nbsp &nbsp &nbsp
+            <input type=“text” name=“gas_month” size="10"></h4>
 
-<h4>How many people live in your home?&nbsp &nbsp &nbsp<input type=“text” name=“1” size="10"/></h4>
 
-<h4>How much do you usually spend on electricity per month?&nbsp &nbsp &nbsp<input type=“text” name=“1” size="10"/></h4>
-
-<h4>How much do you usually spend on natural gas per month?&nbsp &nbsp &nbsp<input type=“text” name=“1” size="10"/></h4>
-
-<h4>How much waste do you create a week? &nbsp &nbsp &nbsp <select>
+            <h4><label class="question">How much waste do you create a week?</label> &nbsp &nbsp &nbsp 
+            <select>
 
 <option value=“meat_quantity”>None</option>
 <option value=“meat_quantity”>A Little</option>
@@ -247,7 +270,8 @@ select {
 
 </select></h4>
 
-<h4>How often do you recycle what can be recycled?&nbsp &nbsp &nbsp <select>
+
+            <h4><label class="question">How often do you recycle what can be recycled?</label>&nbsp &nbsp &nbsp <select>
 
 <option value=“meat_quantity”>Always</option>
 <option value=“meat_quantity”>Almost Always</option>
@@ -258,18 +282,23 @@ select {
 
 </select></h4>
 
-</form>
-				
+			
 				<legend>&nbsp;</legend>
-					<input type="submit" class="button" name="Calculate" value="Calculate " tabindex="14"> <input type="reset" value="Reset" name="reset" class="button" tabindex="15">
-				
-				
-			</form>
+					
+            
+          <h3>Your Results: &nbsp </h3>
+          <h4><label class=question><INPUT TYPE=TEXT NAME=results  SIZE=10 > </label> pounds of CO2/year</h4>
+<P>
+<INPUT TYPE="button" VALUE="Calculate" onClick="computeform(this.form)">
+<INPUT TYPE="reset"  VALUE="Reset" onClick="ClearForm(this.form)">
 
 
+
+</FORM>
 
 
     </section>
+
 
     <!-- About Section -->
     <section class="success" id="about">
@@ -362,6 +391,7 @@ window.onload=maind
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+
     <!-- Plugin JavaScript -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="js/classie.js"></script>
@@ -373,6 +403,86 @@ window.onload=maind
 
     <!-- Custom Theme JavaScript -->
     <script src="js/freelancer.js"></script>
+       <SCRIPT LANGUAGE="JAVASCRIPT">
+<!-- hide this script tag's contents from old browsers
+
+function ClearForm(form){
+
+    form.car_miles.value = "";
+    form.mpg.value = "";
+    form.electric_month.value = "";
+    form.gas_month.value = "";
+
+}
+
+function bmi(weight, height) {
+
+          bmindx=weight/eval(height*height);
+          return bmindx;
+}
+
+function checkform(form) {
+
+      
+
+    	 if (parseFloat(form.mpg.value) <= 0||
+                parseFloat(form.mpg.value) >=500||
+                parseFloat(form.car_miles.value) < 0||
+                parseFloat(form.car_miles.value) >=5000000){
+                alert("\nPlease enter values that are more believable.");
+                ClearForm(form);
+                return false;
+       }
+       return true;
+
+}
+
+function computeform(form) {
+
+       if (checkform(form)) {
+
+       yourresults= ((form.car_miles.value/form.mpg.value)*19.42);
+       form.results.value=yourresults;
+
+       if (yourbmi >40) {
+          form.my_comment.value="You are grossly obese, consult your physician!";
+       }
+
+       else if (yourbmi >30 && yourbmi <=40) {
+          form.my_comment.value="Umm... You are obese, want some liposuction?";
+       }
+
+       else if (yourbmi >27 && yourbmi <=30) {
+          form.my_comment.value="You are very fat, do something before it's too late";
+       }
+
+       else if (yourbmi >22 && yourbmi <=27) {
+          form.my_comment.value="You are fat, need dieting and exercise";
+       }
+
+       else if (yourbmi >=21 && yourbmi <=22) {
+          form.my_comment.value="I envy you. Keep it up!!";
+       }
+
+       else if (yourbmi >=18 && yourbmi <21) {
+          form.my_comment.value="You are thin, eat more.";
+       }
+
+       else if (yourbmi >=16 && yourbmi <18) {
+          form.my_comment.value="You are starving. Go Find some food!";
+       }
+
+       else if (yourbmi <16) {
+          form.my_comment.value="You're grossly undernourished, need hospitalization ";
+       }
+
+       }
+       return;
+}
+ // -- done hiding from old browsers -->
+</SCRIPT>
+
+   
 
 </body>
 
