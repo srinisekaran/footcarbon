@@ -198,20 +198,20 @@ select {
 
 <h3>Check your food.</h3>
             
-            <h4><label class="question">How much meat do you eat? </label> &nbsp &nbsp &nbsp
+            <h4><label class="question">How does your diet look like? </label> &nbsp &nbsp &nbsp
 				  
-            <select name="meat_amount">
+            <select id="meat_amount">
 
 
-            <option value=“meat_quantity1”>None</option>
+            <option value="3307">Vegan</option>
 
-            <option value=“meat_quantity2”>A Little</option>
+            <option value="3747.8">Vegetarian</option>
 
-            <option value=“meat_quantity3”>Average</option>
+            <option value="4188.78">No Beef</option>
 
-            <option value=“meat_quantity4”>Above Average</option>
+            <option value="5511.557">Average</option>
 
-            <option value=“meat_quantity5”>A lot</option>
+            <option value="7275.26">Primarily Meat</option>
             
 
 
@@ -271,7 +271,7 @@ select {
 </select></h4>
 
 
-            <h4><label class="question">How often do you recycle what can be recycled?</label>&nbsp &nbsp &nbsp <select>
+            <h4><label class="question">How often do you recycle what can be recycled?</label>&nbsp &nbsp &nbsp <select onchange="computeform(this.form)">
 
 <option value=“meat_quantity”>Always</option>
 <option value=“meat_quantity”>Almost Always</option>
@@ -423,7 +423,6 @@ function bmi(weight, height) {
 
 function checkform(form) {
 
-      
 
     	 if (parseFloat(form.mpg.value) <= 0||
                 parseFloat(form.mpg.value) >=500||
@@ -434,16 +433,22 @@ function checkform(form) {
                 return false;
        }
        return true;
-
+return meaty;
 }
 
 
 function computeform(form) {
 
+ 
 
        if (checkform(form)) {
 
-       yourresults= Math.round(((form.car_miles.value/form.mpg.value)*19.42)+(.5*form.miles_flown.value));
+		var meaty = document.getElementById("meat_amount").value;
+      	alert(meaty);
+      	
+ 	
+ 
+       yourresults= Math.round(((form.car_miles.value/form.mpg.value)*19.42)+(.5*form.miles_flown.value))+(1*meaty);
        document.getElementById("finalfootprint").innerHTML = yourresults + " pounds of CO2/year";
 
        if (yourbmi >40) {
