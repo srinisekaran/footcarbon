@@ -247,25 +247,31 @@ select {
             
 
 <h4><label class="question">How many people live in your home?</label>&nbsp &nbsp &nbsp
-            <input type=“text” name=“number_family” size="10"></h4>
+            <input type="text" NAME="number_family" size="10"></h4>
 
 
             <h4><label class="question">How much do you usually spend on electricity per month?</label>&nbsp &nbsp &nbsp
-            <input type=“text” name=“electric_month” size="10"></h4>
+            <input type="text" NAME="electric_month" size="10"></h4>
             
 
 <h4><label class="question">How much do you usually spend on natural gas per month?</label>&nbsp &nbsp &nbsp
-            <input type=“text” name=“gas_month” size="10"></h4>
+            <input type="text" NAME="gas_month" size="10"></h4>
 
 
             <h4><label class="question">How much waste do you create a week?</label> &nbsp &nbsp &nbsp 
-            <select>
+              <select id="trash_amount">
 
-<option value=“meat_quantity”>None</option>
-<option value=“meat_quantity”>A Little</option>
-<option value=“meat_quantity”>Average</option>
-<option value=“meat_quantity”>Above Average</option>
-<option value=“meat_quantity”>A lot</option>
+
+            <option value="3307">None</option>
+
+            <option value="3747.8">Little</option>
+
+            <option value="4188.78">Average</option>
+
+            <option value="5511.557">A Lot</option>
+
+           
+            
 
 
 </select></h4>
@@ -445,10 +451,10 @@ function computeform(form) {
 
 		var meaty = document.getElementById("meat_amount").value;
       	
-      	
+      	var energy = (((form.electric_month.value*104.348)+(form.gas_month.value*128.596))/(form.number_family.value*1));
  	
- 
-       yourresults= Math.round(((form.car_miles.value/form.mpg.value)*19.42)+(.5*form.miles_flown.value))+(1*meaty);
+ alert(energy);
+       yourresults= Math.round(((form.car_miles.value/form.mpg.value)*19.42)+(.5*form.miles_flown.value))+(1*meaty)+(1*energy);
        document.getElementById("finalfootprint").innerHTML = yourresults + " pounds of CO2/year";
 
        if (yourbmi >40) {
