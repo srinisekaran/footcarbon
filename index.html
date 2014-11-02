@@ -200,18 +200,18 @@ select {
             
             <h4><label class="question">How much meat do you eat? </label> &nbsp &nbsp &nbsp
 				  
-            <select>
+            <select name="meat_amount">
 
 
-            <option value=“meat_quantity”>None</option>
+            <option value=“meat_quantity1”>None</option>
 
-            <option value=“meat_quantity”>A Little</option>
+            <option value=“meat_quantity2”>A Little</option>
 
-            <option value=“meat_quantity”>Average</option>
+            <option value=“meat_quantity3”>Average</option>
 
-            <option value=“meat_quantity”>Above Average</option>
+            <option value=“meat_quantity4”>Above Average</option>
 
-            <option value=“meat_quantity”>A lot</option>
+            <option value=“meat_quantity5”>A lot</option>
             
 
 
@@ -437,7 +437,12 @@ function checkform(form) {
 
 }
 
+function getSelectedValue(selectList){
+   return selectList[selectList.selectedIndex].value
+}
+
 function computeform(form) {
+var meat_amount=getSelectedValue(form.meat_amount)
 
        if (checkform(form)) {
 
