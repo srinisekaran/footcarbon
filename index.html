@@ -286,8 +286,8 @@ select {
 				<legend>&nbsp;</legend>
 					
             
-          <h3>Your Results: &nbsp </h3>
-          <h4><label class=question><INPUT TYPE=TEXT NAME=results  SIZE=10 > </label> pounds of CO2/year</h4>
+          <h3>Your Results. &nbsp </h3>
+          <h4 ><label class=question id="finalfootprint"> </label> </h4>
 <P>
 <INPUT TYPE="button" VALUE="Calculate" onClick="computeform(this.form)">
 <INPUT TYPE="reset"  VALUE="Reset" onClick="ClearForm(this.form)">
@@ -412,7 +412,7 @@ function ClearForm(form){
     form.mpg.value = "";
     form.electric_month.value = "";
     form.gas_month.value = "";
-
+	
 }
 
 function bmi(weight, height) {
@@ -444,7 +444,7 @@ function computeform(form) {
        if (checkform(form)) {
 
        yourresults= Math.round(((form.car_miles.value/form.mpg.value)*19.42)+(.5*form.miles_flown.value));
-       form.results.value=yourresults;
+       document.getElementById("finalfootprint").innerHTML = yourresults + " pounds of CO2/year";
 
        if (yourbmi >40) {
           form.my_comment.value="You are grossly obese, consult your physician!";
