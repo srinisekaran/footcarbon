@@ -441,7 +441,7 @@ function computeform(form) {
       	var energy = (((form.electric_month.value*104.348)+(form.gas_month.value*128.596))/(form.number_family.value*1));
  	
 
-       yourresults= Math.round(((form.car_miles.value/form.mpg.value)*19.42)+(.5*form.miles_flown.value))+(1*meaty)+(1*energy)+(1*wastey);
+       yourresults= Math.round((((form.car_miles.value/form.mpg.value)*19.42)+(.5*form.miles_flown.value))+(1*meaty)+(1*energy)+(1*wastey));
        document.getElementById("finalfootprint").innerHTML = yourresults + " pounds of CO2/year";
 
        if (yourbmi >40) {
