@@ -45,12 +45,22 @@ h3{
  color: green;
 
 }
+    
 form{
 	text-indent: 5.5em;
 }
-.button {
-		
--webkit-appearance: button;
+
+   input {
+    float:right;
+    clear:both;
+}
+select {
+    float:right;
+    clear:both;
+    
+}
+     button {
+    -webkit-appearance: button;
     -moz-appearance: button;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -64,27 +74,21 @@ form{
     background-image: url(../images/select-arrow.png), -ms-linear-gradient(top, #E5E5E5, #F4F4F4); /* For pre-releases of IE 10*/
     background-image: url(../images/select-arrow.png), -o-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Opera (11.1 to 12.0) */ 
     background-image: url(../images/select-arrow.png), linear-gradient(to bottom, #E5E5E5, #F4F4F4); /* Standard syntax; must be last */
-    background-position: center;
+    background-position: center right;
     background-repeat: no-repeat;
     border: 1px solid #AAA;
     border-radius: 2px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
     color: #555;
     font-size: inherit;
-    font-weight: bold;
-    text-align: center;
-	text-indent: 1.5em;
-
     margin: 0;
     overflow: hidden;
     padding-top: 2px;
     padding-bottom: 2px;
     text-overflow: ellipsis;
     white-space: nowrap;
-
-	
 }
-select {
+     select {
     -webkit-appearance: button;
     -moz-appearance: button;
     -webkit-user-select: none;
@@ -278,7 +282,7 @@ select {
           <h3>Check your results. &nbsp </h3>
           <h4 ><label class=question id="finalfootprint"> </label> </h4>
 <P>
-<INPUT TYPE="button" VALUE="Calculate" onClick="computeform(this.form)">
+<INPUT TYPE="button" VALUE="Calculate" onClick="computeform(this.form)" align="right">
 
 
 
