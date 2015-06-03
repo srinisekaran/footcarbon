@@ -129,8 +129,24 @@ select {
 
 <body id="page-top" class="index">
 
+ <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '438632956315189',
+      xfbml      : true,
+      version    : 'v2.3'
+    });
+  };
 
-    <!-- Navigation -->
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -193,7 +209,7 @@ select {
             </div>
            
 
- 
+
     	<FORM NAME="Footcarbon" method=POST>
 <h3>Check your wheels.</h3> 
             <h4><label class="question">How many miles do you drive a year? </label>&nbsp  &nbsp
@@ -233,6 +249,13 @@ select {
             
 
 <h3>Check your flight.</h3>
+
+ <script>
+ FB.ui({
+  method: 'share',
+  href: 'https://developers.facebook.com/docs/',
+}, function(response){});
+</script>
 
 
            
@@ -288,17 +311,34 @@ select {
 </FORM>
     </section>
 
+
+
  <section id="results">
+    <div id="results_panel" style="visibility:hidden">
         <div class="container">
             
          <h3 style="text-indent: 80px;">Check your results. &nbsp </h3>
             <center> <h4 ><label class=question id="finalfootprint"> </label>
+
+                <br>
+                <br>
+
+
+
+
+
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://footcarbon.me" data-text="Get your carbon footprint at"></a>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
                 <br>
 <hr>
                 <label class=question id="numberoftree"> </label></h4>
 
             
             <div id="chart_div" style="width: 900px; height: 500px;"></div></center>
+        </div>
             
 </section>
     <!-- About Section -->
@@ -460,6 +500,11 @@ function computeform(form) {
 
        drawChart();
 
+        results_panel.style.visibility="visible";
+
+
+
+
 
 
 
@@ -485,7 +530,8 @@ function computeform(form) {
 
         var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
 
-          chart.draw(data);
+        chart.draw(data);
+
 
 
       }
