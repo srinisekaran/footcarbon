@@ -128,6 +128,23 @@ select {
 </head>
 
 <body id="page-top" class="index">
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '831559706930394',
+      xfbml      : true,
+      version    : 'v2.3'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -298,8 +315,13 @@ select {
 
             <a href="https://twitter.com/share" id="tweet" class="twitter-share-button" data-url="http://footcarbon.me" data-text="My annual carbon emissions is "></a>
 
-
-
+ &nbsp;
+            <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
  
 
 
