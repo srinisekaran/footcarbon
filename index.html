@@ -33,6 +33,7 @@
     <![endif]-->
 
 
+    <meta property="og:description"    content='My annual carbon emissions is ' + window.yourresults + '. I need to plant ' + window.tree_num +' to offset it. Find your result at footcarbon.me' />
 
 
     
@@ -495,13 +496,6 @@ function computeform(form) {
 
 
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-
-FB.ui({
-  method: 'feed',
-  link: 'http://footcarbon.me',
-  caption: 'My annual carbon emissions is ' + yourresults + '. I need to plant ' + tree_num +' to offset it. Find your result at footcarbon.me',
-}, function(response){});
-
 
 
        }
