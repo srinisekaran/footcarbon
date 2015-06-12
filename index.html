@@ -315,7 +315,7 @@ select {
 
             <a href="https://twitter.com/share" id="tweet" class="twitter-share-button" data-url="http://footcarbon.me" data-text="My annual carbon emissions is "></a>
 
- &nbsp;  &nbsp; <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
+ &nbsp;  &nbsp; <div class="fb-share-button" onClick="FB.ui()" data-layout="button"></div>
          
 
                 <br>
@@ -544,7 +544,15 @@ function computeform(form) {
 
 </script>
 
-<script></script>
+<script>
+FB.ui({
+  method: 'feed',
+  link: 'http://footcarbon.me',
+  caption: 'My annual carbon emissions is ' + window.yourresults + '. I need to plant ' + window.tree_num +' to offset it. Find your result at footcarbon.me',
+}, function(response){});
+
+
+</script>
    
 
 </body>
