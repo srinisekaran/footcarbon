@@ -315,15 +315,8 @@ select {
 
             <a href="https://twitter.com/share" id="tweet" class="twitter-share-button" data-url="http://footcarbon.me" data-text="My annual carbon emissions is "></a>
 
- &nbsp;
-            <div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
- 
 
+         
 
                 <br>
 <hr>
@@ -504,6 +497,11 @@ function computeform(form) {
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 
 
+FB.ui({
+  method: 'feed',
+  link: 'https://developers.facebook.com/docs/',
+  caption: 'An example caption',
+}, function(response){});
 
 
        }
