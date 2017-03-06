@@ -214,8 +214,8 @@
                 <label class=question id="numberoftree"> </label></h4>
 
             
-            <div id="chart_div" style="width: 900px; height: 500px;" class="img-responsive" ></div></center>
-        </div>
+            <div id="chart_div" style="width: 100%; height: 500px;" class="img-responsive" ></div>
+            <div id="pie_chart" style="width: 100%; height: 500px;" class="img-responsive" ></div>        </div>
             
 </section>
     <!-- About Section -->
@@ -322,98 +322,141 @@ Footcarbon was created to allow you to find your carbon footprint quickly and ea
 
     <!-- Custom Theme JavaScript -->
     <script src="js/freelancer.js"></script>
-    <script language="JAVASCRIPT">
-
-    function ClearForm(form){
-
-        form.car_miles.value = "";
-        form.mpg.value = "";
-        form.electric_month.value = "";
-        form.gas_month.value = "";
-    	
-    }
-
-    function checkform(form){
-
-        if (parseFloat(form.mpg.value) <= 0||
-            parseFloat(form.mpg.value) >=500||
-            parseFloat(form.car_miles.value) < 0||
-            parseFloat(form.car_miles.value) >=5000000){
-            alert("\nPlease enter values that are more believable.");
-            ClearForm(form);
-            return false;
-           }
-        return true;
-    return meat;
-    }
 
 
-    function computeform(form) {
-
-     
-
-           if (checkform(form)) {
-
-    		var meat = document.getElementById("meat_amount").value;
-          	var waste = document.getElementById("recycle").value;
-          	var energy = (((form.electric_month.value*104.348)+(form.gas_month.value*128.596))/(form.number_family.value*1));
-     	
-
-           yourresults= Math.round((((form.car_miles.value/form.mpg.value)*19.42)+(.5*form.miles_flown.value))+(1*meat)+(1*energy)+(1*waste));
-
-           var tree_num = Math.round(yourresults/2000);
-
-           if(isNaN(yourresults)){
-            alert("\nPlease answer a few questions first.");
-           }
-
-           else{
-           document.getElementById("finalfootprint").innerHTML = yourresults + " pounds of CO2/year";
-           document.getElementById("numberoftree").innerHTML = "You would need to plant " + tree_num + " trees to offset your carbon footprint."
-        }    
-
-           drawChart();
-
-            results_panel.style.visibility="visible";
-
-            if (yourresults !== undefined){
-                var elem = document.getElementById("tweet");
-                elem.setAttribute("data-text", elem.getAttribute("data-text") + yourresults + " pounds. \nGet your result at footcarbon.me!");
-            }
 
 
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+<script language="JAVASCRIPT">
 
+function ClearForm(form){
 
+    form.car_miles.value = "";
+    form.mpg.value = "";
+    form.electric_month.value = "";
+    form.gas_month.value = "";
+    
+}
+
+function checkform(form){
+
+    if (parseFloat(form.mpg.value) <= 0||
+        parseFloat(form.mpg.value) >=500||
+        parseFloat(form.car_miles.value) < 0||
+        parseFloat(form.car_miles.value) >=5000000){
+        document.getElementById("finalfootprint").innerHTML = "</br>" + "Please enter more believable numbers.";
+        ClearForm(form);
+        return false;
        }
-       return;
+    return true;
+return meat;
+}
+
+var meat;
+var waste;
+var energy; 
+
+function computeform(form) {
+
+       if (checkform(form)) {
+
+        meat = document.getElementById("meat_amount").value;
+        waste = document.getElementById("recycle").value;
+        energy = (((form.electric_month.value*104.348)+(form.gas_month.value*128.596))/(form.number_family.value*1));
+    
+
+       yourresults= Math.round((((form.car_miles.value/form.mpg.value)*19.42)+(.5*form.miles_flown.value))+(1*meat)+(1*energy)+(1*waste));
+
+       var tree_num = Math.round(yourresults/2000);
+
+       if(isNaN(yourresults)){
+        // alert("\nPlease answer a few questions first.");
+        document.getElementById("finalfootprint").innerHTML = "</br>" + "Please fill everything out.";
+       }
+
+       else{
+       document.getElementById("finalfootprint").innerHTML = yourresults + " pounds of CO2/year";
+       document.getElementById("numberoftree").innerHTML = "You would need to plant " + tree_num + " trees to offset your carbon footprint."
+    }    
+
+        drawChart();
+        drawPieChart(form);
+
+        results_panel.style.visibility="visible";
+
+        
+        var elem = document.getElementById("tweet");
+        elem.setAttribute("data-text", elem.getAttribute("data-text") + yourresults + " pounds. \nGet your result at footcarbon.me!");
+        
+
+
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+
+   }
+   return;
 }
  // -- done hiding from old browsers -->
 </SCRIPT>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['', 'Pounds of CO2 per person', ],
-          ['You',  window.yourresults     ],
-          ['United States',  43651     ],
-          ['India',  2866     ],
-          ['Kenya',  661    ]
-        ]);
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+ 
 
-        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+    var data = google.visualization.arrayToDataTable([
+      ['', 'Pounds of CO2 per person', ],
+      ['You',  window.yourresults     ],
+      ['United States',  43651     ],
+      ['India',  2866     ],
+      ['Kenya',  661    ]
+    ]);
 
-        chart.draw(data);
+    var options = {
+        'backgroundColor': 'transparent',
+        'is3D':true,
+        hAxis: {
+            textStyle:{color: '#FFF'}
+        },
+        vAxis: {
+            textStyle:{color: '#FFF'}
+        },
+        legendTextStyle: { color: '#FFF' },
 
-      }
-    </script>
+    };
 
+    var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
 
-  <script type="text/javascript">
+    chart.draw(data, options);
 
-  </script>
+  }
+
+</script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {packages: ['corechart']});
+  google.charts.setOnLoadCallback(drawPieChart);
+  function drawPieChart(form) {
+
+    var piedata = google.visualization.arrayToDataTable([
+      ['Activity', 'CO2 emissions'],
+      ['Diet', Number(window.meat) ],
+      ['Transportation', (((form.car_miles.value/form.mpg.value)*19.42)+(.5*form.miles_flown.value))],
+      ['Garbage',  Number(window.waste)],
+      ['Utilities', Number(window.energy)]
+    ]);
+
+    var pieoptions = {
+      pieHole: 0.4,
+      'backgroundColor': 'transparent',
+      legendTextStyle: { color: '#FFF' },
+    };
+
+    var piechart = new google.visualization.PieChart(document.getElementById('pie_chart'));
+    piechart.draw(piedata, pieoptions);
+  }
+</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
